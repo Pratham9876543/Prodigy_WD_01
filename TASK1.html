@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Navigation Menu</title>
+<style>
+  /* Basic styling for the navigation menu */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Default background color */
+    color: #fff; /* Default font color */
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  nav ul li {
+    margin-right: 20px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+  /* Style changes on scroll */
+  .scrolled {
+    background-color: #555; /* Changed background color on scroll */
+  }
+  /* Style changes on hover */
+  nav ul li:hover a {
+    color: yellow; /* Font color changes on hover */
+  }
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Add some content to make scrolling visible -->
+<div style="height: 2000px; padding-top: 50px;">
+  <h1 id="home">Home Section</h1>
+  <p>This is the home section. Scroll down to see the navigation menu change color.</p>
+</div>
+
+<script>
+  // JavaScript for changing menu style on scroll
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>
